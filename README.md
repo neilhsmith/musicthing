@@ -15,18 +15,42 @@
 
 ## Folder Structure
 ```
-- .vscode/
-- client/
-  - musicthing/
-    - build/
-    - public/
-    - src/
-- server/
-  - src/
-    - MusicThing.Api/
-  - tests/
-    - MusicThing.Api.UnitTests/
+.vscode/
+client/
+  musicthing/
+    build/
+    public/
+    src/
+server/
+  src/
+    MusicThing.Api/
+  tests/
+    MusicThing.Api.UnitTests/
 ```
 
 - vscode's launch settings will launch both the client and server. 
 - client tests are in the same directory as the app. the server separates tests into a separate project.
+
+## Client Structure
+```
+app/
+  App.tsx
+  rootReducer.ts
+  store.ts
+common/
+features/
+  login/
+    LoginForm.tsx
+pages/
+  LoginPage.tsx
+  PlayerPage.tsx
+styles/
+  abstracts/
+  base/
+  components/
+  layout/
+  pages/
+  themes/
+  main.scss
+index.tsx
+```

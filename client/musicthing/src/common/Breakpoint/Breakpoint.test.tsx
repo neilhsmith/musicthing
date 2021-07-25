@@ -105,10 +105,10 @@ describe("Breakpoint - small", () => {
         <Breakpoint medium down>
           <div data-testid="medium-down">medium down</div>
         </Breakpoint>
-        <Breakpoint medium down>
+        <Breakpoint large down>
           <div data-testid="large-down">large down</div>
         </Breakpoint>
-        <Breakpoint medium down>
+        <Breakpoint xlarge down>
           <div data-testid="xlarge-down">xlarge down</div>
         </Breakpoint>
       </BreakpointProvider>

@@ -1,0 +1,20 @@
+// The player page displays the actual app - logo, sidebar w/ links & playlists,
+// header bar w/ navigation / search / user avatar, explore area, and player 
+// bar.
+
+.player-page {
+    display: grid;
+    grid-template-columns: minmax(25rem, 1fr) 5fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+
+    .sidebar {
+        @include themify() {
+            background-color: themed(backgroundColor3);
+        }
+    }
+    .right {
+
+    }
+}

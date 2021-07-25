@@ -1,0 +1,11 @@
+// both the login & player pages are laid out differently so .page simply sets
+// the shared styles between them
+
+.page {
+    height: 100vh;
+    
+    @include themify() {
+        background-color: themed(backgroundColor1);
+        color: themed(textColor1);
+    }
+}
