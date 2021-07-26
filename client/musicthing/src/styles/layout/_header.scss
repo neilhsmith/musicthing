@@ -1,0 +1,47 @@
+// The header displays 2 columns on desktop (title & nav/search/settings) but
+// only one column on mobile (title & nav drawer button).
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 8%;
+
+  @media all and (min-width: 768px) {
+    grid-template-columns: minmax(25rem, 1fr) 5fr;
+  }
+
+  &__titlebar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.2rem;
+
+    @include themify() {
+      background-color: themed(backgroundColor2);
+      border-bottom: 3px solid themed(backgroundColor4);
+    }
+
+    @media all and (min-width: 768px) {
+      justify-content: center;
+
+      @include themify() {
+        background-color: themed(backgroundColor3);
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &__actionbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    padding: 0 1.2rem;
+
+    @include themify() {
+      background-color: themed(backgroundColor2);
+      border-bottom: 3px solid themed(backgroundColor4);
+    }
+  }
+}

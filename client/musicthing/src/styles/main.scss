@@ -1,14 +1,19 @@
-@import 'abstracts/variables';
-@import 'abstracts/functions';
-@import 'abstracts/mixins';
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
 
-@import 'base/reset';
+@import "base/reset";
 
-@import 'base/typography';
+@import "base/typography";
 
-@import 'components/logo';
+@import "components/hamburger";
+@import "components/logo";
+@import "components/nav";
 
-@import 'layout/page';
+@import "layout/header";
+@import "layout/main";
+@import "layout/page";
+@import "layout/sidebar";
 
-@import 'pages/login';
-@import 'pages/player';
+@import "pages/login";
+@import "pages/player";

@@ -1,9 +1,5 @@
 function LoginPage() {
-    return (
-        <div className="page login-page">
-            login page
-        </div>
-    );
+  return <div className="page page--login">login page</div>;
 }
 
 export default LoginPage;

@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import "typeface-poppins";
 import "../styles/main.scss";
@@ -16,11 +11,11 @@ function App() {
     <div className="app theme-dark">
       <Router>
         <Switch>
-          <Route exact path="/">
-            <PlayerPage />
-          </Route>
-          <Route path="/login">
+          <Route exact path="/login">
             <LoginPage />
+          </Route>
+          <Route path="/">
+            <PlayerPage />
           </Route>
         </Switch>
       </Router>

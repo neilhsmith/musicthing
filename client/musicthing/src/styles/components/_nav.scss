@@ -1,0 +1,46 @@
+.nav {
+  &__list {
+  }
+
+  &__list-item {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    border-radius: 1.2rem;
+
+    &--active {
+      @include themify() {
+        background-color: themed(accent1);
+      }
+
+      .nav__link {
+        @include themify() {
+          color: themed(textColor2);
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0;
+    text-decoration: none;
+
+    @include themify() {
+      color: themed(textColor1);
+    }
+  }
+
+  &__icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    margin-right: 1.4rem;
+  }
+}

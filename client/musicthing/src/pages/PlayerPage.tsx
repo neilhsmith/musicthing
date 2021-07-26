@@ -1,38 +1,105 @@
-import logo from "../app/logo.svg";
+import { useState } from "react";
+import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 
 import { BreakpointProvider, Breakpoint } from "common/Breakpoint";
 
+import { FaMusic, FaSearch, FaCompass, FaRegEyeSlash } from "react-icons/fa";
+import logo from "../app/logo.svg";
+
+import LibraryView from "features/library/LibraryView";
+import SearchView from "features/search/SearchView";
+
 function PlayerPage() {
+  let [navIsOpen, setNavIsOpen] = useState(false);
+  let { path, url } = useRouteMatch();
+
   return (
     <BreakpointProvider>
-      <div className="page player-page">
-        <div className="sidebar">
-          <div className="logo">
-            <img className="logo-img" src={logo} alt="logo" />
-            <h1 className="logo-title">MusicThing</h1>
+      <div className="page page--player">
+        <header className="header">
+          <div className="header__titlebar">
+            <div className="logo">
+              <img className="logo__img" src={logo} alt="logo" />
+              <h1 className="logo__title">MusicThing</h1>
+            </div>
+            <Breakpoint small down>
+              <button
+                className={`hamburger ${navIsOpen ? "hamburger--open" : ""}`}
+                onClick={() => setNavIsOpen(!navIsOpen)}
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </Breakpoint>
           </div>
-        </div>
-        <div className="right">
-          <p>main</p>
-          <Breakpoint xsmall only>
-            <p>xsmall only</p>
+          <Breakpoint medium up>
+            <div className="header__actionbar">action bar</div>
           </Breakpoint>
-          <Breakpoint small only>
-            <p>small only</p>
-          </Breakpoint>
-          <Breakpoint medium only>
-            <p>medium only</p>
-          </Breakpoint>
-          <Breakpoint large only>
-            <p>large only</p>
-          </Breakpoint>
-          <Breakpoint xlarge only>
-            <p>xlarge only</p>
-          </Breakpoint>
-          <Breakpoint xlarge down>
-            <p>xlarge down</p>
-          </Breakpoint>
-        </div>
+        </header>
+        <main className="main">
+          <aside
+            className={`main__sidebar sidebar ${
+              navIsOpen ? "main__sidebar--open" : ""
+            }`}
+          >
+            <div className="sidebar__panel">
+              <nav className="nav">
+                <ul className="nav__list">
+                  <li className="nav__list-item nav__list-item--active">
+                    <Link className="nav__link" to="/">
+                      <div className="nav__icon">
+                        <FaMusic />
+                      </div>
+                      Library
+                    </Link>
+                  </li>
+                  <li className="nav__list-item">
+                    <Link className="nav__link" to="/search">
+                      <div className="nav__icon">
+                        <FaSearch />
+                      </div>
+                      Search
+                    </Link>
+                  </li>
+                  <li className="nav__list-item">
+                    <Link className="nav__link" to="/explore">
+                      <div className="nav__icon">
+                        <FaCompass />
+                      </div>
+                      Explore
+                    </Link>
+                  </li>
+                  <li className="nav__list-item">
+                    <Link className="nav__link" to="/blocked">
+                      <div className="nav__icon">
+                        <FaRegEyeSlash />
+                      </div>
+                      Blocked
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </aside>
+          <div className="main__body body">
+            <Switch>
+              <Route exact path={path}>
+                <LibraryView />
+              </Route>
+              <Route path="/search">
+                <SearchView />
+              </Route>
+              <Route path="/explore">
+                <h2>Coming soon</h2>
+              </Route>
+              <Route path="/blocked">
+                <h2>Coming soon</h2>
+              </Route>
+            </Switch>
+          </div>
+        </main>
       </div>
     </BreakpointProvider>
   );
