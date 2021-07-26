@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
+import { Switch, Route, Link, useLocation } from "react-router-dom";
 
 import { BreakpointProvider, Breakpoint } from "common/Breakpoint";
 
@@ -11,7 +11,8 @@ import SearchView from "features/search/SearchView";
 
 function PlayerPage() {
   let [navIsOpen, setNavIsOpen] = useState(false);
-  let { path, url } = useRouteMatch();
+  const location = useLocation();
+  const { pathname } = location;
 
   return (
     <BreakpointProvider>
@@ -47,32 +48,64 @@ function PlayerPage() {
             <div className="sidebar__panel">
               <nav className="nav">
                 <ul className="nav__list">
-                  <li className="nav__list-item nav__list-item--active">
-                    <Link className="nav__link" to="/">
+                  <li
+                    className={`nav__list-item ${
+                      pathname === "/" ? "nav__list-item--active" : ""
+                    }`}
+                  >
+                    <Link
+                      className="nav__link"
+                      to="/"
+                      onClick={() => setNavIsOpen(false)}
+                    >
                       <div className="nav__icon">
                         <FaMusic />
                       </div>
                       Library
                     </Link>
                   </li>
-                  <li className="nav__list-item">
-                    <Link className="nav__link" to="/search">
+                  <li
+                    className={`nav__list-item ${
+                      pathname === "/search" ? "nav__list-item--active" : ""
+                    }`}
+                  >
+                    <Link
+                      className="nav__link"
+                      to="/search"
+                      onClick={() => setNavIsOpen(false)}
+                    >
                       <div className="nav__icon">
                         <FaSearch />
                       </div>
                       Search
                     </Link>
                   </li>
-                  <li className="nav__list-item">
-                    <Link className="nav__link" to="/explore">
+                  <li
+                    className={`nav__list-item ${
+                      pathname === "/explore" ? "nav__list-item--active" : ""
+                    }`}
+                  >
+                    <Link
+                      className="nav__link"
+                      to="/explore"
+                      onClick={() => setNavIsOpen(false)}
+                    >
                       <div className="nav__icon">
                         <FaCompass />
                       </div>
                       Explore
                     </Link>
                   </li>
-                  <li className="nav__list-item">
-                    <Link className="nav__link" to="/blocked">
+                  <li
+                    className={`nav__list-item ${
+                      pathname === "/blocked" ? "nav__list-item--active" : ""
+                    }`}
+                  >
+                    <Link
+                      className="nav__link"
+                      to="/blocked"
+                      onClick={() => setNavIsOpen(false)}
+                    >
                       <div className="nav__icon">
                         <FaRegEyeSlash />
                       </div>
@@ -85,7 +118,7 @@ function PlayerPage() {
           </aside>
           <div className="main__body body">
             <Switch>
-              <Route exact path={path}>
+              <Route exact path="/">
                 <LibraryView />
               </Route>
               <Route path="/search">
