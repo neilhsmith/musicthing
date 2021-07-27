@@ -2,6 +2,14 @@
 // Copied manually for learning purposes.
 
 import Breakpoint from "./Breakpoint";
-import BreakpointProvider from "./BreakpointProvider";
+import BreakpointProvider, {
+  useCurrentWidth,
+  useCurrentBreakpointName,
+} from "./BreakpointProvider";
 
-export { Breakpoint, BreakpointProvider };
+export {
+  Breakpoint,
+  BreakpointProvider,
+  useCurrentWidth,
+  useCurrentBreakpointName,
+};

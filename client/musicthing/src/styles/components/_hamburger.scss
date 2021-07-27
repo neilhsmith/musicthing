@@ -3,7 +3,7 @@
   height: 2.5rem;
   position: relative;
   transform: rotate(0deg);
-  transition: 0.5s ease-in-out;
+  transition: 0.25s ease-in-out;
   cursor: pointer;
   background: transparent;
   border: none;
@@ -18,7 +18,7 @@
     opacity: 1;
     left: 0;
     transform: rotate(0deg);
-    transition: 0.25s ease-in-out;
+    transition: 0.15s ease-in-out;
 
     @include themify() {
       background: themed(textColor1);
@@ -36,7 +36,7 @@
     }
   }
 
-  &--open {
+  &--active {
     span {
       &:nth-child(1) {
         top: 1rem;
