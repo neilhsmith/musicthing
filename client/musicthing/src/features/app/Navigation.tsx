@@ -6,7 +6,7 @@ import { toggleSidebar } from "./appSlice";
 
 import { FaMusic, FaSearch, FaCompass, FaRegEyeSlash } from "react-icons/fa";
 
-interface NavItem {
+export interface NavItem {
   to: string;
   name: string;
   icon: JSX.Element;

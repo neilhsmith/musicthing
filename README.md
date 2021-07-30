@@ -13,44 +13,24 @@
   - allow user to nest playlists
 - ...
 
-## Folder Structure
-```
-.vscode/
-client/
-  musicthing/
-    build/
-    public/
-    src/
-server/
-  src/
-    MusicThing.Api/
-  tests/
-    MusicThing.Api.UnitTests/
-```
+## Server appSettings.json
 
-- vscode's launch settings will launch both the client and server. 
-- client tests are in the same directory as the app. the server separates tests into a separate project.
+I'm leaving appSettings.json out of git so that the secret used to genrate JWTs
+is hidden. TODO: find a better way.
 
-## Client Structure
 ```
-app/
-  App.tsx
-  rootReducer.ts
-  store.ts
-common/
-features/
-  login/
-    LoginForm.tsx
-pages/
-  LoginPage.tsx
-  PlayerPage.tsx
-styles/
-  abstracts/
-  base/
-  components/
-  layout/
-  pages/
-  themes/
-  main.scss
-index.tsx
+{
+  "AppSettings": {
+    "Secret": "the secret",
+    "RefreshTokenTTL": 2
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*"
+}
 ```
