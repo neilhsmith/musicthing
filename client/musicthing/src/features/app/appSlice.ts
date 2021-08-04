@@ -1,6 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "app/store";
 
-const initialState = {
+type AppState = {
+  sidebarOpen: boolean;
+};
+
+const initialState: AppState = {
   sidebarOpen: false,
 };
 
@@ -18,4 +23,4 @@ export const { toggleSidebar } = appSlice.actions;
 
 export default appSlice.reducer;
 
-export const sidebarOpenSelector = (state: any) => state.app.sidebarOpen;
+export const sidebarOpenSelector = (state: RootState) => state.app.sidebarOpen;

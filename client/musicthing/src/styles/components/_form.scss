@@ -1,0 +1,53 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__label {
+  }
+
+  &__input {
+    border: 0;
+
+    @include themify() {
+      background-color: themed(backgroundColor4);
+      color: themed(textColor2);
+    }
+
+    &--text {
+    }
+
+    &--password {
+    }
+  }
+
+  &__submit {
+    padding: 1rem 0;
+    text-transform: uppercase;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+
+    @include themify() {
+      background-color: themed(theme1);
+      color: themed(backgroundColor2);
+    }
+  }
+}
+
+.form-errors {
+  margin-bottom: 1rem;
+
+  @include themify() {
+    color: themed(danger);
+  }
+}

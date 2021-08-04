@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "app/hooks";
 import { Link, useLocation } from "react-router-dom";
 
 import { useCurrentWidth } from "common/Breakpoint";
@@ -36,7 +36,7 @@ const navItems: NavItem[] = [
 ];
 
 const Navigation = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const currentWidth = useCurrentWidth();
 
