@@ -7,6 +7,7 @@ import Logo from "common/Logo";
 import HamburgerButton from "common/HamburgerButton";
 
 import Navigation from "features/app/Navigation";
+import AppDropdown from "features/app/AppDropdown";
 
 import LibraryView from "features/library/LibraryView";
 import SearchView from "features/search/SearchView";
@@ -14,9 +15,6 @@ import SearchView from "features/search/SearchView";
 import { sidebarOpenSelector, toggleSidebar } from "features/app/appSlice";
 
 function PlayerPage() {
-  const sidebarOpen = useAppSelector(sidebarOpenSelector);
-  const dispatch = useAppDispatch();
-
   return (
     <BreakpointProvider>
       <div className="page page--player">
@@ -24,29 +22,18 @@ function PlayerPage() {
           <div className="header__titlebar">
             <Logo />
             <Breakpoint small down>
-              <HamburgerButton
-                active={sidebarOpen}
-                onClick={() => dispatch(toggleSidebar())}
-              />
+              <SidebarDrawerButton />
             </Breakpoint>
           </div>
           <Breakpoint medium up>
-            <div className="header__actionbar">action bar</div>
+            <div className="header__actionbar">
+              <div>searchbar</div>
+              <AppDropdown />
+            </div>
           </Breakpoint>
         </header>
         <main className="main">
-          <aside
-            className={`main__sidebar sidebar ${
-              sidebarOpen ? "main__sidebar--open" : ""
-            }`}
-          >
-            <Breakpoint small down>
-              <div className="sidebar__panel">search</div>
-            </Breakpoint>
-            <div className="sidebar__panel">
-              <Navigation />
-            </div>
-          </aside>
+          <Sidebar />
           <div className="main__body body">
             <Switch>
               <Route exact path="/">
@@ -66,6 +53,37 @@ function PlayerPage() {
         </main>
       </div>
     </BreakpointProvider>
+  );
+}
+
+function SidebarDrawerButton() {
+  const sidebarOpen = useAppSelector(sidebarOpenSelector);
+  const dispatch = useAppDispatch();
+
+  return (
+    <HamburgerButton
+      active={sidebarOpen}
+      onClick={() => dispatch(toggleSidebar())}
+    />
+  );
+}
+
+function Sidebar() {
+  const sidebarOpen = useAppSelector(sidebarOpenSelector);
+
+  return (
+    <aside
+      className={`main__sidebar sidebar ${
+        sidebarOpen ? "main__sidebar--open" : ""
+      }`}
+    >
+      <Breakpoint small down>
+        <div className="sidebar__panel">search</div>
+      </Breakpoint>
+      <div className="sidebar__panel">
+        <Navigation />
+      </div>
+    </aside>
   );
 }
 

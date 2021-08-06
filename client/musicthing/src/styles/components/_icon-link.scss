@@ -1,0 +1,18 @@
+.icon-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+
+  @include themify() {
+    color: themed(textColor2);
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.8rem;
+  }
+}

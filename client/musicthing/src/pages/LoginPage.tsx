@@ -17,7 +17,7 @@ function LoginPage() {
   useEffect(() => {
     // reset login status
     dispatch(logout);
-  }, []);
+  }, [dispatch]);
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

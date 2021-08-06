@@ -56,6 +56,9 @@ class AuthService {
         error.response.data.message === "Invalid token"
       ) {
         // handle expired refresh token here
+
+        // todo: would be nice to dispatch a logout action here would show a
+        // notification to the user and handle the redirect
         window.location.href = "login";
       }
     }

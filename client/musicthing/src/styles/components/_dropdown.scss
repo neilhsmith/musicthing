@@ -1,0 +1,49 @@
+.dropdown {
+  position: relative;
+
+  &__control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+
+    @include themify() {
+      color: themed(textColor1);
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    right: 0;
+    padding: 1rem 0;
+    min-width: 20rem;
+    border-radius: 1.2rem;
+    z-index: 2;
+
+    @include themify() {
+      background-color: themed(accent1);
+      color: themed(textColor2);
+    }
+  }
+
+  &__list {
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 2rem;
+
+    @include themify() {
+      border-bottom: 1px solid themed(backgroundColor4);
+    }
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+  }
+}
