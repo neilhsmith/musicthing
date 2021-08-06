@@ -83,6 +83,11 @@ function Sidebar() {
       <div className="sidebar__panel">
         <Navigation />
       </div>
+      <Breakpoint small down style={{ marginTop: "auto" }}>
+        <div className="sidebar__panel sidebar__panel--bottom">
+          settings / logout
+        </div>
+      </Breakpoint>
     </aside>
   );
 }

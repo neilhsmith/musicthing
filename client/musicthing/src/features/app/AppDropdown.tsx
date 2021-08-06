@@ -33,13 +33,11 @@ const AppDropdown = () => {
               </a>
             </li>
             <li className="dropdown__item">
-              <a className="dropdown__link">
-                <a className="icon-link" href="#">
-                  <div className="icon-link__icon">
-                    <FaSignOutAlt />
-                  </div>
-                  Sign Out
-                </a>
+              <a className="icon-link" href="#">
+                <div className="icon-link__icon">
+                  <FaSignOutAlt />
+                </div>
+                Sign Out
               </a>
             </li>
           </ul>
