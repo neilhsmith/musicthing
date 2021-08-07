@@ -1,0 +1,23 @@
+.bg-primary {
+  @include themify() {
+    background-color: themed(theme1);
+    border-color: themed(theme1);
+    color: themed(textColor3);
+  }
+}
+
+.bg-secondary {
+  @include themify() {
+    background-color: themed(secondary);
+    border-color: themed(secondary);
+    color: themed(textColor3);
+  }
+}
+
+.bg-danger {
+  @include themify() {
+    background-color: themed(danger);
+    border-color: themed(danger);
+    color: themed(accent2);
+  }
+}

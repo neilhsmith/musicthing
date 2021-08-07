@@ -12,6 +12,8 @@ import AppDropdown from "features/app/AppDropdown";
 import LibraryView from "features/library/LibraryView";
 import SearchView from "features/search/SearchView";
 
+import SignOutModal from "features/app/SignOutModal";
+
 import { sidebarOpenSelector, toggleSidebar } from "features/app/appSlice";
 
 function PlayerPage() {
@@ -52,6 +54,7 @@ function PlayerPage() {
           </div>
         </main>
       </div>
+      <SignOutModal />
     </BreakpointProvider>
   );
 }

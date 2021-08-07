@@ -1,4 +1,9 @@
-import { combineReducers, configureStore, AnyAction } from "@reduxjs/toolkit";
+import {
+  combineReducers,
+  configureStore,
+  AnyAction,
+  Action,
+} from "@reduxjs/toolkit";
 import { ThunkAction } from "redux-thunk";
 
 import appReducer from "features/app/appSlice";
@@ -9,8 +14,16 @@ const reducers = combineReducers({
   auth: authReducer,
 });
 
+const rootReducer = (state: any, action: Action) => {
+  if (action.type === "auth/logout") {
+    return reducers(undefined, action);
+  }
+
+  return reducers(state, action);
+};
+
 const store = configureStore({
-  reducer: reducers,
+  reducer: rootReducer,
   devTools: process.env.NODE_ENV !== "production",
 });
 

@@ -4,6 +4,9 @@
   justify-content: flex-start;
   align-items: center;
   text-decoration: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
 
   @include themify() {
     color: themed(textColor2);

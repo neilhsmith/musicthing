@@ -14,7 +14,7 @@ import PlayerPage from "pages/PlayerPage";
 function App() {
   return (
     <Provider store={store}>
-      <div className="app theme-dark">
+      <div id="app" className="app theme-dark">
         <Router history={history}>
           <Switch>
             <Route exact path="/login" component={LoginPage} />
