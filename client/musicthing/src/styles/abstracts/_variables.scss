@@ -1,16 +1,30 @@
+/*
+Color Notes
+-----------
+background: 1 - 3 is used for app panel backgrounds. 4 & 5 for active item,
+            dropdown, and modal backgrounds. 6 is used for the search bar.
+text      : text is the primary text color. textActive is used for active items.
+            light & dark variants are used to color buttons and such where the 
+            background is perdictable and therefore a non-generic name is okay
+others    : generically named colors      
+*/
+
 $themes: (
   dark: (
-    backgroundColor1: #191f22,
-    backgroundColor2: #141b1e,
-    backgroundColor3: #12181b,
-    backgroundColor4: #252b2e,
-    textColor1: #c4c4c4,
-    textColor2: #ffffff,
-    textColor3: #000000,
-    accent1: #374348,
-    accent2: #e5e5e5,
-    theme1: #46d9ad,
-    secondary: #f0f0f0,
+    background1: #12181b,
+    background2: #141b1e,
+    background3: #191f22,
+    background4: #252b2e,
+    background5: #374348,
+    background6: #e5e5e5,
+    text: #c4c4c4,
+    textActive: #ffffff,
+    textLight: #f6f6f6,
+    textDark: #141b1e,
+    primary: #46d9ad,
     danger: #dc3545,
+    warning: #eb9c53,
   ),
 );
+
+$border-radius: 1rem;

@@ -22,12 +22,12 @@
   z-index: 8;
   position: relative;
   margin: auto;
-  border-radius: 0.8rem;
+  border-radius: $border-radius;
   min-width: 42rem;
 
   @include themify() {
-    background-color: themed(backgroundColor1);
-    color: themed(textColor1);
+    background-color: themed(background1);
+    color: themed(text);
   }
 
   &__header {
@@ -39,8 +39,8 @@
     font-size: 1.2rem;
 
     @include themify() {
-      border-bottom: 1px solid themed(backgroundColor3);
-      color: themed(textColor2);
+      border-bottom: 1px solid themed(background3);
+      color: themed(textActive);
     }
   }
 
@@ -51,7 +51,7 @@
     font-size: 1.8rem;
 
     @include themify() {
-      color: themed(textColor2);
+      color: themed(textActive);
     }
   }
 
@@ -59,7 +59,7 @@
     padding: 4rem 1rem;
 
     @include themify() {
-      border-bottom: 1px solid themed(backgroundColor3);
+      border-bottom: 1px solid themed(background3);
     }
   }
 

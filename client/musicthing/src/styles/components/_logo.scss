@@ -14,29 +14,7 @@
     font-size: clamp(2.2rem, 1.4vw, 3.8rem);
 
     @include themify() {
-      color: themed(textColor2);
+      color: themed(textActive);
     }
   }
 }
-
-// .logo {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: center;
-//     align-items: center;
-//     height: 8rem;
-
-//     &-img {
-//         width: 13%;
-//         max-width: 6rem;
-//         margin-right: 1rem;
-//     }
-
-//     &-title {
-//         font-size: clamp(2.2rem, 1.4vw, 3.8rem);
-
-//         @include themify() {
-//             color: themed(textColor2);
-//         }
-//     }
-// }

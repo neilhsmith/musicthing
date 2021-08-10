@@ -6,16 +6,16 @@
     width: 80%;
     margin: 0 auto;
     padding: 0.25rem 1rem;
-    border-radius: 1.2rem;
+    border-radius: $border-radius;
 
     &--active {
       @include themify() {
-        background-color: themed(accent1);
+        background-color: themed(background5);
       }
 
       .nav__link {
         @include themify() {
-          color: themed(textColor2);
+          color: themed(textActive);
         }
       }
     }
@@ -33,7 +33,7 @@
     margin: 0 auto;
 
     @include themify() {
-      color: themed(textColor1);
+      color: themed(text);
     }
   }
 

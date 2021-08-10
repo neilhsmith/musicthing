@@ -1,16 +1,16 @@
 .bg-primary {
   @include themify() {
-    background-color: themed(theme1);
-    border-color: themed(theme1);
-    color: themed(textColor3);
+    background-color: themed(primary);
+    border-color: themed(primary);
+    color: themed(textDark);
   }
 }
 
 .bg-secondary {
   @include themify() {
-    background-color: themed(secondary);
-    border-color: themed(secondary);
-    color: themed(textColor3);
+    background-color: themed(background6);
+    border-color: themed(background6);
+    color: themed(textDark);
   }
 }
 
@@ -18,6 +18,6 @@
   @include themify() {
     background-color: themed(danger);
     border-color: themed(danger);
-    color: themed(accent2);
+    color: themed(textLight);
   }
 }

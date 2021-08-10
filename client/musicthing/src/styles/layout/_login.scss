@@ -5,9 +5,10 @@
 
   &__form {
     padding: 2rem 4rem;
+    border-radius: $border-radius;
 
     @include themify() {
-      background-color: themed(backgroundColor2);
+      background-color: themed(background4);
     }
   }
 }

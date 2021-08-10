@@ -21,7 +21,7 @@
     }
 
     @include themify() {
-      background-color: themed(backgroundColor3);
+      background-color: themed(background3);
     }
 
     @media all and (min-width: 768px) {
@@ -34,7 +34,7 @@
     z-index: 1;
 
     @include themify() {
-      background-color: themed(backgroundColor1);
+      background-color: themed(background1);
     }
   }
 }

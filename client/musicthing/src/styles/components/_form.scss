@@ -20,7 +20,7 @@
 
     @include themify() {
       background-color: themed(backgroundColor4);
-      color: themed(textColor2);
+      color: themed(textDark);
     }
 
     &--text {
@@ -38,8 +38,8 @@
     cursor: pointer;
 
     @include themify() {
-      background-color: themed(theme1);
-      color: themed(backgroundColor2);
+      background-color: themed(primary);
+      color: themed(textDark);
     }
   }
 }

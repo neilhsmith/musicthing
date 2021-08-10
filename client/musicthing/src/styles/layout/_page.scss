@@ -2,10 +2,10 @@
 // the shared styles between them
 
 .page {
-    height: 100vh;
-    
-    @include themify() {
-        background-color: themed(backgroundColor1);
-        color: themed(textColor1);
-    }
+  height: 100vh;
+
+  @include themify() {
+    background-color: themed(background1);
+    color: themed(text);
+  }
 }

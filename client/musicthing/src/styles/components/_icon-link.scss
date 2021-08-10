@@ -9,7 +9,7 @@
   cursor: pointer;
 
   @include themify() {
-    color: themed(textColor2);
+    color: themed(textActive);
   }
 
   &__icon {

@@ -18,15 +18,15 @@
     padding: 0 1.2rem;
 
     @include themify() {
-      background-color: themed(backgroundColor2);
-      border-bottom: 3px solid themed(backgroundColor4);
+      background-color: themed(background2);
+      border-bottom: 3px solid themed(background4);
     }
 
     @media all and (min-width: 768px) {
       justify-content: center;
 
       @include themify() {
-        background-color: themed(backgroundColor3);
+        background-color: themed(background3);
         border-bottom: 0;
       }
     }
@@ -41,8 +41,8 @@
     padding: 0 1.2rem;
 
     @include themify() {
-      background-color: themed(backgroundColor2);
-      border-bottom: 3px solid themed(backgroundColor4);
+      background-color: themed(background2);
+      border-bottom: 3px solid themed(background4);
     }
   }
 }

@@ -10,21 +10,21 @@
     cursor: pointer;
 
     @include themify() {
-      color: themed(textColor1);
+      color: themed(text);
     }
   }
 
   &__menu {
     position: absolute;
     right: 0;
-    padding: 1rem 0;
+    padding: 2rem 0;
     min-width: 20rem;
-    border-radius: 1.2rem;
+    border-radius: $border-radius;
     z-index: 2;
 
     @include themify() {
-      background-color: themed(accent1);
-      color: themed(textColor2);
+      background-color: themed(background4);
+      color: themed(text);
     }
   }
 
@@ -36,11 +36,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding: 1rem 2rem;
-
-    @include themify() {
-      border-bottom: 1px solid themed(backgroundColor4);
-    }
+    padding: 0.6rem 2rem;
 
     &:last-of-type {
       border-bottom: 0;
