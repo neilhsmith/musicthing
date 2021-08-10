@@ -6,7 +6,7 @@ export interface HamburgerButtonProps {
 const HamburgerButton = ({ active, onClick }: HamburgerButtonProps) => {
   return (
     <button
-      className={`hamburger ${active ? "hamburger--active" : ""}`}
+      className={`hamburger${active ? " hamburger--active" : ""}`}
       onClick={onClick}
     >
       <span></span>
