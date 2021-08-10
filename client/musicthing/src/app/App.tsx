@@ -1,5 +1,12 @@
-function App() {
-  return <div className="app">the app</div>;
-}
+import "styles/main.scss";
+import "./app.styles.scss";
 
-export default App;
+import { AppPage } from "features/app/components";
+
+export default function App() {
+  return (
+    <div className="app theme-dark" data-testid="app">
+      <AppPage></AppPage>
+    </div>
+  );
+}
