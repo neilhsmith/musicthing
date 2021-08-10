@@ -1,7 +1,7 @@
 import { useAppDispatch } from "app/hooks";
 import useComponentVisible from "hooks/useComponentVisible";
 
-import { openSignOutModal } from "./appSlice";
+import { openSettingsModal, openSignOutModal } from "./appSlice";
 
 import { FaUserCog, FaCog, FaSignOutAlt } from "react-icons/fa";
 
@@ -16,6 +16,11 @@ const AppDropdown = () => {
 
   const { ref, isComponentVisible, setIsComponentVisible } =
     useComponentVisible(false);
+
+  function onSettingsClick() {
+    setIsComponentVisible(false);
+    dispatch(openSettingsModal());
+  }
 
   function onSignOutClick() {
     setIsComponentVisible(false);
@@ -34,7 +39,7 @@ const AppDropdown = () => {
         <div className="dropdown__menu">
           <ul className="dropdown__list">
             <li className="dropdown__item">
-              <button className="icon-link">
+              <button className="icon-link" onClick={onSettingsClick}>
                 <div className="icon-link__icon">
                   <FaCog />
                 </div>
