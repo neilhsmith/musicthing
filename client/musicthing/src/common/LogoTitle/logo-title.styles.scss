@@ -1,0 +1,17 @@
+.logo-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  &__img {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 0.5rem;
+  }
+
+  &__title {
+    font-size: clamp(2.2rem, 1.4vw, 3.8rem);
+    color: var(--text-color-active);
+  }
+}
