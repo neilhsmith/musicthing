@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: Page matches its snapshot 1`] = `
+.c0 {
+  height: 100vh;
+  background-color: #12181b;
+  color: #c4c4c4;
+}
+
+<div
+  class="c0"
+>
+  <span
+    data-testid="42"
+  >
+    a child
+  </span>
+</div>
+`;

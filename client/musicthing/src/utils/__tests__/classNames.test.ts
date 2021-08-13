@@ -1,4 +1,4 @@
-import classNames from "./classNames";
+import classNames from "../classNames";
 
 describe("Util: classNames", () => {
   it("handles no args", () => {

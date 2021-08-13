@@ -1,15 +1,20 @@
-import "styles/main.scss";
-import "./app.styles.scss";
+import { ThemeProvider } from "styled-components";
 
 import "typeface-poppins";
+import { ResetStyle, GlobalStyle } from "styles/GlobalStyles";
+import { dark } from "styles/themes";
 
 import { PlayerPage } from "features/player/components";
 import { LoginPage } from "features/auth/components";
 
 export default function App() {
   return (
-    <div className="app theme-dark" data-testid="app">
-      <LoginPage />
-    </div>
+    <ThemeProvider theme={dark}>
+      <ResetStyle />
+      <GlobalStyle />
+      <div className="app" data-testid="app">
+        <LoginPage />
+      </div>
+    </ThemeProvider>
   );
 }

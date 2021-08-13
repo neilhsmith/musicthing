@@ -1,30 +1,51 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, defaultTheme } from "test-utils";
 
 import Page from "./Page";
 
 describe("Component: Page", () => {
-  it("renders children", () => {
-    render(
-      <Page>
-        <span data-testid="1">expected text 1</span>
-        <span data-testid="2">expected text 2</span>
-      </Page>
-    );
-
-    expect(screen.getByTestId(1)).toHaveTextContent("expected text 1");
-    expect(screen.getByTestId(2)).toHaveTextContent("expected text 2");
-  });
-
-  // todo: shouldn't be testing for classes? this confuses me because the whole
-  // point of the Page component is to be a styled wrapper so shouldn't I check
-  // that those styles are applied?
-  it("sets the page class", () => {
+  it("matches its snapshot", () => {
     const { container } = render(
       <Page>
-        <span>children</span>
+        <span data-testid="42">a child</span>
       </Page>
     );
 
-    expect(container.firstChild).toHaveClass("page");
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it("fills the viewport", () => {
+    const { container } = render(
+      <Page>
+        <span data-testid="42">a child</span>
+      </Page>
+    );
+
+    expect(container.firstChild).toHaveStyleRule("height", "100vh");
+  });
+
+  it("sets theme's background1 as the background-color", () => {
+    const { container } = render(
+      <Page>
+        <span data-testid="42">a child</span>
+      </Page>
+    );
+
+    expect(container.firstChild).toHaveStyleRule(
+      "background-color",
+      defaultTheme.colors.background1
+    );
+  });
+
+  it("sets theme's text as the color", () => {
+    const { container } = render(
+      <Page>
+        <span data-testid="42">a child</span>
+      </Page>
+    );
+
+    expect(container.firstChild).toHaveStyleRule(
+      "color",
+      defaultTheme.colors.text
+    );
   });
 });

@@ -1,11 +1,9 @@
 import { ReactNode } from "react";
-
-import "./page.styles.scss";
+import styled from "styled-components";
 
 /**
- * A basic component used to wrap individual pages. It simply provides a
- * background-color and sets its height to be equal to the viewport & renders
- * children.
+ * A basic component used to wrap individual pages. It simply provides a colors,
+ * sets its height to be equal to the viewport and renders children.
  */
 
 type PageProps = {
@@ -13,6 +11,12 @@ type PageProps = {
   children: ReactNode;
 };
 
-export default function Page({ children }: PageProps) {
-  return <div className="page">{children}</div>;
-}
+const StyledPage = styled.div`
+  height: 100vh;
+  background-color: ${(props) => props.theme.colors.background1};
+  color: ${(props) => props.theme.colors.text};
+`;
+
+const Page = ({ children }: PageProps) => <StyledPage>{children}</StyledPage>;
+
+export default Page;

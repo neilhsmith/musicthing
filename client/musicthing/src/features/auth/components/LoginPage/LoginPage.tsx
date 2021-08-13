@@ -1,18 +1,21 @@
 import Page from "common/layout/Page";
-import FlexCenter from "common/layout/FlexCenter";
+import Flexbox from "common/layout/Flexbox";
 
 import LogoTitle from "common/LogoTitle";
-
-import "./loginpage.styles.scss";
+import LoginForm from "../LoginForm";
 
 export default function LoginPage() {
   return (
     <Page>
-      <div className="login-page">
-        <FlexCenter>
-          <LogoTitle />
-        </FlexCenter>
-      </div>
+      <Flexbox
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        height="100%"
+      >
+        <LogoTitle />
+        <LoginForm />
+      </Flexbox>
     </Page>
   );
 }
