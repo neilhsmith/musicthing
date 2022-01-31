@@ -1,6 +1,6 @@
 # MusicThing
 
-![screenshot of the Figma design](https://github.com/neilhsmith/musicthing/blob/main/music-thing.PNG?raw=true)
+![screenshot of the Figma design](https://github.com/neilhsmith/musicthing/blob/main/musicthing.PNG?raw=true)
 
 ## Todo
 
