@@ -1,5 +1,7 @@
 # MusicThing
 
+![screenshot of the Figma design](https://github.com/neilhsmith/musicthing/blob/main/music-thing.PNG?raw=true)
+
 ## Todo
 
 - login / view app
